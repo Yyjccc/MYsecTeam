@@ -120,7 +120,7 @@ public class ContainerAPI {
 
 
     //关闭容器,判断是否成功，放置在上面一层封装
-        public static void stopContainer(String containerId)  {
+    public static void stopContainer(String containerId)  {
         try{
             // 构建 Docker 命令
             ProcessBuilder processBuilder = new ProcessBuilder("sudo","docker", "stop", containerId);
