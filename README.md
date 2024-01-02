@@ -15,18 +15,18 @@
 
 
 ## 测试 api 文档
-- /ctf
-测试，返回json
-- /ctf/api/docker/all 
+    - /ctf
+测试，返回json  
+    - /ctf/api/docker/all 
 获取所有存活的靶机
-- /ctf/api/docker/stopAll
+    - /ctf/api/docker/stopAll
 停止所有存活靶机
-- /ctf/docker/start
+    - /ctf/docker/start
 get 请求 
 参数： username: 用户名(现在是根据用户名创建用户对象）   path:启动靶机的路径（根据配置文件，如flask/ssti）
 测试阶段，
 
-- /ctf/docker/stop
+    - /ctf/docker/stop
 get请求
 参数： username:根据用户名关闭靶机
 

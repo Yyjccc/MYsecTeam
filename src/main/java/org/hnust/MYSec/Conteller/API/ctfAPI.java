@@ -1,4 +1,4 @@
-package org.hnust.MYSec.Conteller;
+package org.hnust.MYSec.Conteller.API;
 
 
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ctf/api")
+@RequestMapping("/api/ctf")
 public class ctfAPI {
     private final DockerManger dockerManger;
 
@@ -32,7 +32,7 @@ public class ctfAPI {
 
 
     //获取所有活跃的靶机
-    @GetMapping("docker/all")
+    @GetMapping(value = "docker/all",produces = { "application/json"})
     public String getall(){
        List<Container> containers=dockerManger.getAllContainer();
         return JSON.toJSONString(containers);
@@ -44,7 +44,7 @@ public class ctfAPI {
     }
 
     //开启靶机,测试接收参数@ModelAttribute CTFUser ctfUser改为了username
-    @GetMapping ("docker/start")
+    @GetMapping (value = "docker/start",produces = { "application/json"})
     public String startDocker(String username,String path){
         //测试代码部分
         CTFUser ctfUser=new CTFUser();
@@ -70,7 +70,7 @@ public class ctfAPI {
         }
     }
 
-    @GetMapping ("docker/stop")
+    @GetMapping (value = "docker/stop",produces = { "application/json"})
     //关闭靶机,测试接收参数@ModelAttribute CTFUser ctfUser改为了username
     public String stopDocker(String username){
         //测试代码
@@ -94,7 +94,7 @@ public class ctfAPI {
     }
 
     //需要鉴定管理员权限
-    @GetMapping("docker/stopAll")
+    @GetMapping(value = "docker/stopAll",produces = { "application/json"})
     public String stopAllContainer(){
         dockerManger.closeAllContainer();
         if(dockerManger.activeDocker.isEmpty()){

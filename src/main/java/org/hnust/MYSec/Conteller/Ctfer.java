@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Ctfer {
 
     //首页
-    @RequestMapping("/")
+    @RequestMapping(value = "/",produces = { "application/json"})
     public String index(){
         CTFUser ctfUser=new Member();
         return JSON.toJSONString(ctfUser, SerializerFeature.WriteMapNullValue);
