@@ -3,7 +3,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @Data
 @NoArgsConstructor
@@ -23,7 +22,7 @@ public class Student {
     //专业
     private String major;
     //方向
-    private String[] direction;
+    private String direction;
 
     //QQ号
     private String qq;

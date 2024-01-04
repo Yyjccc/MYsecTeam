@@ -11,8 +11,8 @@ import java.util.List;
 public class test {
     public static void main(String[] args) {
         CTFUserMapper ctfUserMapper=null;
-            List<CTFUser> ctfUsers=ctfUserMapper.selectList(null);
-            ctfUsers.forEach(System.out::println);
+
+
 
     }
 }

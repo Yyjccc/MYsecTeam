@@ -27,7 +27,7 @@ public class Test {
 		student.setAge(22);
 		student.setQq("3393867490");
 		student.setDepartment("计算机学院");
-		student.setDirection(new String[]{"web","misc"});
+		student.setDirection("web,misc");
 		student.setRealName("yyjccc");
 		student.setMajor("信息安全");
 		return JSON.toJSONString(student);

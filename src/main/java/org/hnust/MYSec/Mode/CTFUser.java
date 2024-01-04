@@ -1,15 +1,12 @@
 package org.hnust.MYSec.Mode;
 
-import com.alibaba.fastjson.JSON;
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hnust.MYSec.Mapper.StudentMapper;
 import org.hnust.MYSec.Mode.Base.Student;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 import java.util.Objects;
@@ -28,8 +25,8 @@ public class CTFUser {
     //账号密码
     private String password;
     //是否为校内成员
-    @TableField("`isIN`")
-    private boolean isIN;
+    @TableField("`inner`")
+    private boolean inner;
     //邮箱
     private String email;
 
@@ -40,10 +37,7 @@ public class CTFUser {
     private Student studentInfo;
 
     //是否为管理员
-    private boolean isManager;
-
-
-
+    private boolean manager;
 
     // 重写hashCode和equals方法,
     @Override

@@ -13,31 +13,53 @@
 
 用户层还未开始，所以暂时为测试接口，参数可能后面会修改
 
-
 ## 测试 api 文档
-- /ctf/
-  测试，返回json
-- /ctf/api/docker/all 
-   获取所有存活的靶机
-- /ctf/api/docker/stopAll
-   停止所有存活靶机
-- /ctf/docker/start
-  get 请求 
-  参数： username: 用户名(现在是根据用户名创建用户对象）   path:启动靶机的路径（根据配置文件，如flask/ssti）
-  测试阶段，
+
+### ctf部分
+
     - /ctf
-测试，返回json  
-    - /ctf/api/docker/all 
-获取所有存活的靶机
-    - /ctf/api/docker/stopAll
-停止所有存活靶机
-    - /ctf/docker/start
-get 请求 
-参数： username: 用户名(现在是根据用户名创建用户对象）   path:启动靶机的路径（根据配置文件，如flask/ssti）
-测试阶段，
+ 测试，返回json  
+    - /api/ctf/docker/all 
+ 获取所有存活的靶机
+    - /api/ctf/docker/stopAll
+ 停止所有存活靶机
+    - /api/ctf/docker/start
+ get 请求 
+ 参数： username: 用户名(现在是根据用户名创建用户对象）   path:启动靶机的路径（根据配置文件，如flask/ssti）
+ 测试阶段，
 
-    - /ctf/docker/stop
-get请求
-参数： username:根据用户名关闭靶机
+    - /api/ctf/docker/stop
+ get请求
+ 参数： username:根据用户名关闭靶机
 
+### 用户部分
 
+其中还未开启密码hash存储，cookie校验和重定向
+有些接口需要cookie中的jwt,jwt登录接口获取
+
+    - /api/user/login/用户名/密码        登录 
+    - /api/user/register               注册
+ post json参数
+```json
+    {
+    "username":"用户名" ,"password":"密码","email":"邮箱",
+     "inner":"是否为校内成员","manager":"是否为管理员",
+    "studentInfo(可选)":"如下对象"
+    }
+```
+其中studentInfo对象：
+```json
+    {
+    "realName":"真实姓名","age":"年级","department":"学院",
+     "direction":"方向","major":"专业","qq":"qq号"
+    }
+```
+    - /api/user/destory  注销
+    - /api/user/update/类型/值     修改
+类型：username,password,email,manager
+    - /api/user/query/用户名   查询
+
+### sql测试
+创建数据库的文件：/src/main/resource/mysec.sql
+    - /test/sql
+    - /test/obj
