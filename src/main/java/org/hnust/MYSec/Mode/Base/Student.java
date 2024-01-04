@@ -1,12 +1,18 @@
 package org.hnust.MYSec.Mode.Base;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Data
-@Component
 @NoArgsConstructor
+@TableName("students")
 public class Student {
+
+    @TableId
+    private Long id;
+
     //真实姓名
     private String realName;
     //年级
@@ -18,6 +24,9 @@ public class Student {
     private String major;
     //方向
     private String[] direction;
+
+    //QQ号
+    private String qq;
 
 
 }
