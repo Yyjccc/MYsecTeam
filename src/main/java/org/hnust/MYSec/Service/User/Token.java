@@ -44,7 +44,6 @@ public class  Token {
 					.setSigningKey(secretKey)
 					.parseClaimsJws(jwt)
 					.getBody();
-
 			// 在这里可以根据需要检查其他声明或条件
 
 			return true;

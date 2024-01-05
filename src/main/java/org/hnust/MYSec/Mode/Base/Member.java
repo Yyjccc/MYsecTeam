@@ -1,11 +1,12 @@
-package org.hnust.MYSec.Mode;
+package org.hnust.MYSec.Mode.Base;
 
 import lombok.Data;
+import org.hnust.MYSec.Mode.CTFUser;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class Member extends CTFUser{
+public class Member extends CTFUser {
     //主要方向
     private String mainTarget;
     //积分

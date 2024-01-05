@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hnust.MYSec.Mode.Base.Student;
+import org.hnust.MYSec.Utils.HashUtil;
 
 
 import java.util.Objects;
@@ -24,6 +25,9 @@ public class CTFUser {
     private String username;
     //账号密码
     private String password;
+
+    //密码加盐
+    private String salt;
     //是否为校内成员
     @TableField("`inner`")
     private boolean inner;
@@ -52,5 +56,27 @@ public class CTFUser {
         CTFUser ctfUser = (CTFUser) obj;
         return Objects.equals(username, ctfUser.username);
     }
+    //保留测试数据，没有salt就是明文
+    public boolean checkPassword(String value){
+        if (salt!=null){
+            return HashUtil.hashPassword(value,salt).equals(password);
+        }else {
+            return this.getPassword().equals(value);
+        }
+    }
 
+    //设置密码时候一定是先生成salt,再设置密码，保留测试数据，没有salt就是明文
+    public void setPassword(String password) {
+        if(salt==null){
+            this.password = password;
+        }else {
+            this.password=HashUtil.hashPassword(password,salt);
+        }
+    }
+
+    public void HashPassword(){
+        String raw=password;
+        this.setSalt(HashUtil.generateSalt());
+        this.setPassword(raw);
+    }
 }

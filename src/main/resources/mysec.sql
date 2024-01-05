@@ -11,7 +11,7 @@
  Target Server Version : 50726 (5.7.26)
  File Encoding         : 65001
 
- Date: 05/01/2024 00:56:38
+ Date: 05/01/2024 17:33:43
 */
 
 SET NAMES utf8mb4;
@@ -29,6 +29,7 @@ CREATE TABLE `ctfuser`  (
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `manager` int(11) NULL DEFAULT NULL,
   `student_info_id` bigint(20) NULL DEFAULT NULL,
+  `salt` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `username`) USING BTREE,
   INDEX `xxx`(`student_info_id`) USING BTREE
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -36,9 +37,10 @@ CREATE TABLE `ctfuser`  (
 -- ----------------------------
 -- Records of ctfuser
 -- ----------------------------
-INSERT INTO `ctfuser` VALUES (1, 'yyjccc', '123456', 0, 'yan@c.com', 1, 1);
-INSERT INTO `ctfuser` VALUES (1742915054500761601, 'yycc', '123456', 1, 'yan@c.com', 1, 1742915054395904001);
-INSERT INTO `ctfuser` VALUES (1742941809454297089, 'ooo', '123456', 0, 'yan@c.com', 0, NULL);
+INSERT INTO `ctfuser` VALUES (1, 'yyjccc', '123456', 0, 'yan@c.com', 1, 1, NULL);
+INSERT INTO `ctfuser` VALUES (1742915054500761601, 'yycc', '123456', 1, 'yan@c.com', 1, 1742915054395904001, NULL);
+INSERT INTO `ctfuser` VALUES (1742941809454297089, 'ooo', '123456', 0, 'yan@c.com', 0, NULL, NULL);
+INSERT INTO `ctfuser` VALUES (1743193221811589122, 'qzy', '58adce5e36b5cb33a9514b1b02efc1a06a8c0c5591ba299d5f4a0c680b63c2ed', 0, 'r@c.com', 1, NULL, 'Y?9w#gweF8EM');
 
 -- ----------------------------
 -- Table structure for students

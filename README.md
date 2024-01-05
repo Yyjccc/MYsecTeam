@@ -4,34 +4,30 @@
 
 几大模块：ctf靶场与比赛、安全团队训练（任务与进度公开）、成员资料展示、比赛动态与交流、学习文章分享
 
-
 正在施工：ctf靶场与比赛模块的后端
 
 ## 进展
 
-完善docker api 能够开启关闭靶机
+完善docker api 能够开启关闭靶机,
+完善了用户数据接口的基本功能，设置了密码hash和salt,jwt认证，cookie，Session双重保证
+设置了拦截器，有些api,需要登录授权
 
-用户层还未开始，所以暂时为测试接口，参数可能后面会修改
 
 ## 测试 api 文档
 
 ### ctf部分
-
-    - /ctf
- 测试，返回json  
-    - /api/ctf/docker/all 
- 获取所有存活的靶机
-    - /api/ctf/docker/stopAll
- 停止所有存活靶机
-    - /api/ctf/docker/start
+```text
+ /ctf           测试，返回json  
+ /api/ctf/docker/all    获取所有存活的靶机
+ /api/ctf/docker/stopAll        停止所有存活靶机
+ /api/ctf/docker/start
  get 请求 
  参数： username: 用户名(现在是根据用户名创建用户对象）   path:启动靶机的路径（根据配置文件，如flask/ssti）
  测试阶段，
-
-    - /api/ctf/docker/stop
+ /api/ctf/docker/stop
  get请求
  参数： username:根据用户名关闭靶机
-
+```
 ### 用户部分
 
 其中还未开启密码hash存储，cookie校验和重定向

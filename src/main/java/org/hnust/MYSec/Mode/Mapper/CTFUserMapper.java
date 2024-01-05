@@ -1,4 +1,4 @@
-package org.hnust.MYSec.Mapper;
+package org.hnust.MYSec.Mode.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Delete;

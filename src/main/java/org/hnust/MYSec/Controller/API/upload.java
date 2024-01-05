@@ -1,4 +1,4 @@
-package org.hnust.MYSec.Conteller.API;
+package org.hnust.MYSec.Controller.API;
 
 
 import com.alibaba.fastjson.JSON;

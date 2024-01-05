@@ -1,9 +1,9 @@
-package org.hnust.MYSec.Conteller;
+package org.hnust.MYSec.Controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.hnust.MYSec.Mode.CTFUser;
-import org.hnust.MYSec.Mode.Member;
+import org.hnust.MYSec.Mode.Base.Member;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,16 +1,18 @@
 package org.hnust.MYSec.Service.User;
 
 import com.alibaba.fastjson.JSON;
-import org.hnust.MYSec.Mapper.CTFUserMapper;
-import org.hnust.MYSec.Mapper.StudentMapper;
+import jakarta.servlet.http.HttpServletRequest;
+import org.hnust.MYSec.Mode.Mapper.CTFUserMapper;
+import org.hnust.MYSec.Mode.Mapper.StudentMapper;
 import org.hnust.MYSec.Mode.Base.Student;
 import org.hnust.MYSec.Mode.CTFUser;
 import org.hnust.MYSec.Service.DockerAPI.DockerManger;
+import org.hnust.MYSec.Service.Interceptor.CookieSession.CookieManager;
+import org.hnust.MYSec.Utils.HashUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CookieValue;
 
 import java.util.List;
 
@@ -35,7 +37,10 @@ public class CTFuserService {
 
 	public boolean addCTFUser(CTFUser ctfUser){
 		try {
-
+			//密码进行加盐hash
+			String rawPassword=ctfUser.getPassword();
+			ctfUser.setSalt(HashUtil.generateSalt());
+			ctfUser.setPassword(rawPassword);
 			if (ctfUser.isInner()) {
 				Student student = ctfUser.getStudentInfo();
 				studentMapper.insert(student);
@@ -86,6 +91,8 @@ public class CTFuserService {
 		return ctfUserMapper.updateById(ctfUser)>0;
 	}
 
+
+	//通过jwt字符串反序列化,还原对象
 	public CTFUser getUserByToken(String jwt){
 		CTFUser ctfUser=null;
 		try {
@@ -95,5 +102,17 @@ public class CTFuserService {
 			logger.error(e.getMessage());
 		}
 		return ctfUser;
+	}
+	//优先Cookie,再Session，获取ctfuser对象
+	public CTFUser  getUserByRequest(HttpServletRequest request){
+		String jwtToken= CookieManager.getJwtByCookie(request);
+		if(jwtToken!=null && Token.validateJwt(jwtToken)) {
+			return getUserByToken(jwtToken);
+		}
+		String jwt = request.getSession().getAttribute("user").toString();
+		if(jwt!=null) {
+			return getUserByToken(jwt);
+		}
+		return null;
 	}
 }

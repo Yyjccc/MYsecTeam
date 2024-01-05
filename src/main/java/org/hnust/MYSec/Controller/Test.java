@@ -1,8 +1,8 @@
-package org.hnust.MYSec.Conteller;
+package org.hnust.MYSec.Controller;
 
 
 import com.alibaba.fastjson.JSON;
-import org.hnust.MYSec.Mapper.CTFUserMapper;
+import org.hnust.MYSec.Mode.Mapper.CTFUserMapper;
 import org.hnust.MYSec.Mode.Base.Student;
 import org.hnust.MYSec.Mode.CTFUser;
 import org.springframework.beans.factory.annotation.Autowired;

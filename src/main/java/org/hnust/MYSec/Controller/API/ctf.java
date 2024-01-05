@@ -1,4 +1,4 @@
-package org.hnust.MYSec.Conteller.API;
+package org.hnust.MYSec.Controller.API;
 
 
 
@@ -44,8 +44,8 @@ public class ctf {
     }
 
     //开启靶机,测试接收参数@ModelAttribute CTFUser ctfUser改为了username
-    @GetMapping (value = "docker/start")
-    public String startDocker(String username,String path){
+    @GetMapping (value = "docker/start/{username}/{path}")
+    public String startDocker(@PathVariable String username,@PathVariable String path){
         message.setFail();
         //测试代码部分
         CTFUser ctfUser=new CTFUser();

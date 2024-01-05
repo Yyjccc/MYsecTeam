@@ -1,18 +1,11 @@
 package org.hnust.MYSec.Utils;
 
-import org.hnust.MYSec.Mapper.CTFUserMapper;
-import org.hnust.MYSec.Mode.CTFUser;
-import org.hnust.MYSec.Service.DockerAPI.ContainerAPI;
-
-import org.hnust.MYSec.Service.DockerAPI.DockerManger;
-
-import java.util.List;
-
 public class test {
-    public static void main(String[] args) {
-        CTFUserMapper ctfUserMapper=null;
+	public static void main(String[] args) {
+		String password="";
+		String hash=HashUtil.hashPassword(password);
+		System.out.println(hash);
+		System.out.println(HashUtil.generateSalt());
 
-
-
-    }
+	}
 }
