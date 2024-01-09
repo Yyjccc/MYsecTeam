@@ -6,10 +6,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class Message {
+public class Message<T> {
 	private int code=400;
 	private boolean ok=false;
-	private Object info;
+	//成功携带的数据
+	private T info;
+	//错误信息
+	private String msg;
 
 
 	public void setOK(){

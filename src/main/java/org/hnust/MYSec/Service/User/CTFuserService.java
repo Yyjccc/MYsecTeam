@@ -2,6 +2,9 @@ package org.hnust.MYSec.Service.User;
 
 import com.alibaba.fastjson.JSON;
 import jakarta.servlet.http.HttpServletRequest;
+import org.hnust.MYSec.Mode.Base.Exception.ArgsError;
+import org.hnust.MYSec.Mode.Base.Exception.AuthenError;
+import org.hnust.MYSec.Mode.Base.Exception.DataError;
 import org.hnust.MYSec.Mode.Mapper.CTFUserMapper;
 import org.hnust.MYSec.Mode.Mapper.StudentMapper;
 import org.hnust.MYSec.Mode.Base.Student;
@@ -14,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,43 +33,31 @@ public class CTFuserService {
 	public CTFUser getCTFUserByName(String name){
 		List<CTFUser> ctfUsers=ctfUserMapper.findUserByName(name);
 		if(ctfUsers.isEmpty()){
-			return null;
+			throw new DataError("用户名不存在");
 		}else {
 			return ctfUsers.get(0);
 		}
 	}
 
-	public boolean addCTFUser(CTFUser ctfUser){
-		try {
-			//密码进行加盐hash
-			String rawPassword=ctfUser.getPassword();
-			ctfUser.setSalt(HashUtil.generateSalt());
-			ctfUser.setPassword(rawPassword);
-			if (ctfUser.isInner()) {
-				Student student = ctfUser.getStudentInfo();
-				studentMapper.insert(student);
-				ctfUser.setStudentInfoId(student.getId());
+	public void addCTFUser(CTFUser ctfUser){
+		//密码进行加盐hash
+		String rawPassword=ctfUser.getPassword();
+		ctfUser.setSalt(HashUtil.generateSalt());
+		ctfUser.setPassword(rawPassword);
+		if (ctfUser.isInner()) {
+			Student student = ctfUser.getStudentInfo();
+			studentMapper.insert(student);
+			ctfUser.setStudentInfoId(student.getId());
 
-			}
-
-			ctfUserMapper.insert(ctfUser);
-			return true;
-		}catch (Exception e){
-			logger.error(e.getMessage());
-			return false;
 		}
+		ctfUserMapper.insert(ctfUser);
 	}
 
-	public  boolean deleteUser(CTFUser ctfUser){
-		try{
-			if(ctfUser.isInner()){
-				studentMapper.deleteById(ctfUser.getStudentInfoId());
-			}
-			return ctfUserMapper.deleteById(ctfUser.getId())==1;
-		} catch (Exception e){
-			logger.error(e.getMessage());
-			return false;
+	public void deleteUser(CTFUser ctfUser){
+		if(ctfUser.isInner()){
+			studentMapper.deleteById(ctfUser.getStudentInfoId());
 		}
+		ctfUserMapper.deleteByName(ctfUser.getUsername());
 	}
 	//这个方法能改则该。检查数据库中用户名是否存在
 	public boolean checkExist(String username){
@@ -74,6 +66,10 @@ public class CTFuserService {
 	}
 
 	public boolean updateValue(CTFUser ctfUser, String type, String value){
+		List<String> allow=new ArrayList<String>(List.of("username","password","email","manager"));
+		if(!allow.contains(type)){
+			throw new ArgsError("参数值错误  type:"+type);
+		}
 		if(type.equals("username")){
 			ctfUser.setUsername(value);
 			} else if (type.equals("password")) {
@@ -87,7 +83,6 @@ public class CTFuserService {
 				ctfUser.setManager(false);
 			}
 		}
-
 		return ctfUserMapper.updateById(ctfUser)>0;
 	}
 
@@ -109,10 +104,11 @@ public class CTFuserService {
 		if(jwtToken!=null && Token.validateJwt(jwtToken)) {
 			return getUserByToken(jwtToken);
 		}
+
 		String jwt = request.getSession().getAttribute("user").toString();
 		if(jwt!=null) {
 			return getUserByToken(jwt);
 		}
-		return null;
+		throw new AuthenError("无效cookie");
 	}
 }

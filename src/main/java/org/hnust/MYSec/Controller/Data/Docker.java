@@ -1,4 +1,4 @@
-package org.hnust.MYSec.Controller.API;
+package org.hnust.MYSec.Controller.Data;
 
 
 
@@ -7,71 +7,65 @@ import org.hnust.MYSec.Mode.CTFUser;
 import org.hnust.MYSec.Mode.Message;
 import org.hnust.MYSec.Service.DockerAPI.DockerManger;
 import org.hnust.MYSec.Service.DockerAPI.Mode.Container;
+import org.hnust.MYSec.Utils.ResposeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/ctf",produces = { "application/json"})
-public class ctf {
+@RequestMapping(value = "/api/data/docker",produces = { "application/json"})
+public class Docker {
     private final DockerManger dockerManger;
-
-    //由spring自动注入
-    @Autowired
-    private Message message;
 
 
     private String basePath;
 
     @Autowired
-    public ctf(DockerManger dockerManger) {
+    public Docker(DockerManger dockerManger) {
         this.dockerManger = dockerManger;
         this.basePath=dockerManger.remoteHost.baseurl;
     }
 
 
     //获取所有活跃的靶机
-    @GetMapping(value = "docker/all")
+    @GetMapping(value = "/all")
     public String getall(){
        List<Container> containers=dockerManger.getAllContainer();
         return JSON.toJSONString(containers);
     }
     //获取某个靶机的运行状态
-    @PostMapping("docker/query")
+    @PostMapping("/query")
     public String query(){
         return null;
     }
 
     //开启靶机,测试接收参数@ModelAttribute CTFUser ctfUser改为了username
-    @GetMapping (value = "docker/start/{username}/{path}")
-    public String startDocker(@PathVariable String username,@PathVariable String path){
-        message.setFail();
+    @GetMapping (value = "/start/{username}/{path}")
+    public Message startDocker(@PathVariable String username, @PathVariable String path){
+
         //测试代码部分
         CTFUser ctfUser=new CTFUser();
         ctfUser.setUsername(username);
         //test 只检查了username
         if(dockerManger.checkExistUser(ctfUser)){
-            message.setInfo("一个用户只能开启一台靶机");
-            return  JSON.toJSONString(message);
+            return ResposeUtil.error("用户只能开启一个容器");
         }
         dockerManger.addContainer(ctfUser,basePath+path);
         //Container container=dockerManger.userDockerMap.get(ctfUser);
         //测试，只拿username相同的
         Container container=dockerManger.userDockerMap.get(ctfUser);
         if(container==null){
-            message.setInfo("启动靶机失败");
-            return  JSON.toJSONString(message);
+
+            return  ResposeUtil.error("启动靶机失败");
         }else {
-            message.setOK();
-            message.setInfo(container);
-            return JSON.toJSONString(message);
+            return ResposeUtil.response(container);
         }
     }
 
-    @GetMapping (value = "docker/stop")
+    @GetMapping (value = "/stop")
     //关闭靶机,测试接收参数@ModelAttribute CTFUser ctfUser改为了username
-    public String stopDocker(String username){
+    public Message stopDocker(String username){
         //测试代码
         CTFUser ctfUser=new CTFUser();
         ctfUser.setUsername(username);
@@ -79,36 +73,22 @@ public class ctf {
         //判断是否存在靶机,同上test
         if (dockerManger.checkExistUser(ctfUser)){
             if(dockerManger.closeContainer(ctfUser)){
-                message.setOK();
-                message.setInfo("关闭靶机成功");
-                return JSON.toJSONString(message);
+                return ResposeUtil.response();
             }else {
-                message.setInfo("关闭靶机失败");
+               return ResposeUtil.error("关闭靶机失败");
             }
         }else {
-            message.setInfo("用户未开启该靶机");
+           return ResposeUtil.error("用户未开启该靶机");
         }
-        message.setFail();
-        return JSON.toJSONString(message);
     }
 
     //需要鉴定管理员权限
-    @GetMapping(value = "docker/stopAll")
-    public String stopAllContainer(){
+    @GetMapping(value = "/stopAll")
+    public Message stopAllContainer(){
         dockerManger.closeAllContainer();
         if(dockerManger.activeDocker.isEmpty()){
-            message.setOK();
-            message.setInfo("关闭所有靶机成功");
-            return JSON.toJSONString(message);
+            return ResposeUtil.response();
         }
-         message.setInfo("关闭所有靶机失败");
-        message.setFail();
-        return JSON.toJSONString(message);
-    }
-
-    //创建队伍
-    @PostMapping("/create")
-    public String createTeam(){
-        return null;
+        return ResposeUtil.error("关闭所有靶机失败");
     }
 }

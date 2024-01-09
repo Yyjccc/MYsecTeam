@@ -11,7 +11,7 @@
  Target Server Version : 50726 (5.7.26)
  File Encoding         : 65001
 
- Date: 05/01/2024 17:33:43
+ Date: 10/01/2024 00:03:46
 */
 
 SET NAMES utf8mb4;
@@ -62,5 +62,29 @@ CREATE TABLE `students`  (
 -- ----------------------------
 INSERT INTO `students` VALUES (1, 'yyjcccc', 22, '计算机学院', '信息安全', 'web,misc', '3393867490');
 INSERT INTO `students` VALUES (1742915054395904001, 'yyjccc', 22, '计算机学院', '信息安全', 'web,misc', '3393867490');
+
+-- ----------------------------
+-- Table structure for targetdrone
+-- ----------------------------
+DROP TABLE IF EXISTS `targetdrone`;
+CREATE TABLE `targetdrone`  (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `attachment` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `hints` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `level` int(11) NULL DEFAULT NULL,
+  `solvedUser` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `labels` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `source` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `target` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `date` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`, `name`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of targetdrone
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;

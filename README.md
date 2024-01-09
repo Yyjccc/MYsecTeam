@@ -18,9 +18,9 @@
 ### ctf部分
 ```text
  /ctf           测试，返回json  
- /api/ctf/docker/all    获取所有存活的靶机
- /api/ctf/docker/stopAll        停止所有存活靶机
- /api/ctf/docker/start
+ /api/data/docker/all    获取所有存活的靶机
+ /api/data/docker/stopAll        停止所有存活靶机
+ /api/data/docker/start
  get 请求 
  参数： username: 用户名(现在是根据用户名创建用户对象）   path:启动靶机的路径（根据配置文件，如flask/ssti）
  测试阶段，
@@ -33,8 +33,8 @@
 其中还未开启密码hash存储，cookie校验和重定向
 有些接口需要cookie中的jwt,jwt登录接口获取
 
-    - /api/user/login/用户名/密码        登录 
-    - /api/user/register               注册
+- /api/data/user/login/用户名/密码        登录 
+- /api/data/user/register               注册
  post json参数
 ```json
     {
@@ -50,12 +50,12 @@
      "direction":"方向","major":"专业","qq":"qq号"
     }
 ```
-    - /api/user/destory  注销
-    - /api/user/update/类型/值     修改
+- /api/data/user/destory  注销
+- /api/data/user/update/类型/值     修改
 类型：username,password,email,manager
-    - /api/user/query/用户名   查询
+- /api/data/user/query/用户名   查询
 
 ### sql测试
 创建数据库的文件：/src/main/resource/mysec.sql
-    - /test/sql
-    - /test/obj
+- /test/sql
+- /test/obj
