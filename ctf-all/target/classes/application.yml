@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: ctfAll
+  #nacos center address
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        namespace: public
+        username: nacos
+        password: nacos
+
+  mvc:
+    interceptor:
+      #no need login api
+      exclude-paths:
+        - /api/data/user/login/**
+        - /api/data/user/register/**
+
+
+
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysec?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      schema: mysec
+
+
+
+docker:
+  service:
+    #docker service select local or remote mode
+    mode: remote
+    #docker api address
+    api: http://192.168.120.128:2375
+    #docker compose yaml directory base path
+    baseurl: /var/www/html/vulhub/
+  remote:
+    # remote docker host ip
+    host: 192.168.120.128
+    #remote docker host ssh username
+    username: kali
+    #remote docker host ssh password
+    password: 20041009qq
+
+
+file:
+  #all upload  file root dir
+  root: ./ctf-all/uploads
+  path:
+    attachment: /attachment
+    picture: /user
+    docker: /docker
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: false
+  port: 12345

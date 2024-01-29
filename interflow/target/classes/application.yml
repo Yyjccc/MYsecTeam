@@ -1,0 +1,13 @@
+server:
+  port: 12346
+spring:
+  application:
+    name: interflow
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        namespace: public
+        username: nacos
+        password: nacos
+
