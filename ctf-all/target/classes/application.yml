@@ -67,3 +67,4 @@ server:
       cookie:
         http-only: false
   port: 12345
+

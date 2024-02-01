@@ -11,3 +11,27 @@ spring:
         username: nacos
         password: nacos
 
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysec_interflow?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+ai:
+  key:
+    openai: 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
+    bing: sss
+    wenxin:
+      api_key: wGc2suGP2zR3h2u43luK4M75
+      secret_key: AzsW7WYT7Fn0eIjsUpxwnMO9fQoOAdhe
+    gemini: AIzaSyCPtSsZXOuUa_bIv-hO9OZAn_TPIDmCdqs
+    xinhuo:
+      app_id: 3973710a
+      api_secret: OTA4YmNiODJlMzA4MzkzOGZlOTllZTkx
+      api_key: e393a60062dd784c4b9b47904a887e15
+
+  proxy:
+    host: 127.0.0.1
+    port: 8090
+  server: http://127.0.0.1:5000

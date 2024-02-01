@@ -27,12 +27,7 @@ public class DockerManger {
 
     private static final Logger logger = LoggerFactory.getLogger(DockerManger.class);
     public List<Container> activeDocker;
-    /**
-     * 状态级别:                    <br/>
-     * -1 初始化失败，或未初始化       <br/>
-     * 1    正常                  <br/>
-     * 2    系统超负荷状态         <br/>
-     */
+
     public short status;
 
     public  HashMap<CTFUser, Container> userDockerMap;
