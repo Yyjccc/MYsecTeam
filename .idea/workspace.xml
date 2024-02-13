@@ -4,56 +4,121 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bd2d715-851e-4140-a394-59e9cd46c21f" name="更改" comment="# update README.md">
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Configure/AIConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Configure/HttpSessionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Configure/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Configure/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/Exception/HTTPException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/ai/OpenAIRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/ai/OpenAIResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/chat/AiChatLogs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/chat/ChatLogs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/chat/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/AIMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/AIProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/Gemini.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/OpenAI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/Wenxin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/XinHuo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/WS/ChatEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Util/Http.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Util/HttpClientUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Util/Py.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/mysec_interflow.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/common/Res.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/common/jsonEncoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/service/gemini.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/service/key.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/service/openAI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/main/resources/py/service/wenxin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/test/java/com/hnust/interflow/PyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interflow/src/test/java/com/hnust/interflow/SimpleHttpServer.java" afterDir="false" />
+    <list default="true" id="3bd2d715-851e-4140-a394-59e9cd46c21f" name="更改" comment="# add ai init">
+      <change afterPath="$PROJECT_DIR$/MYSec/vue-admin/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MYSec/vue-admin/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MYSec/vue-admin/src/api/admin/targets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MYSec/vue-admin/src/components/other/Search.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MYSec/vue-admin/src/pages/admin/PersonInfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MYSec/vue-admin/vite.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/Mapper/ChatLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/Mapper/GroupMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/Mode/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Util/MessageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Configure/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Configure/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Base/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Base/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Mapper/ArticleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Vo/ArticleListVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Vo/CategoryList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Vo/HotArticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/Vo/PageVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Mode/enums/HttpCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/MyblogApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Service/ArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Service/utils/BeanCopyUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Service/utils/QueryWrapperUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/com/hnust/myblog/Service/utils/SystemConstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/test/java/com/hnust/myblog/MyblogApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/ctf-all.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/ctf-all.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MYSec/vue-admin/src/components/Header/avator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/MYSec/vue-admin/src/components/Header/avator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MYSec/vue-admin/src/pages/admin/content/Topic.vue" beforeDir="false" afterPath="$PROJECT_DIR$/MYSec/vue-admin/src/pages/admin/content/Topic.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctf-all/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Service/DockerAPI/ContainerAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Service/DockerAPI/ContainerAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Service/DockerAPI/DockerManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Service/DockerAPI/DockerManger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Utils/Http.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Utils/Http.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Controller/Data/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Controller/Data/user.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Mode/CTFUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Mode/CTFUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Mode/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Mode/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Mode/TargetDrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Mode/TargetDrone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Service/Data/User/CTFuserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/java/com/hnust/myctf/Service/Data/User/CTFuserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctf-all/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/ContainerAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/ContainerAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/DockerManger.class" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/DockerManger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/Http.class" beforeDir="false" afterPath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/Http.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/MYsecConfig.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Configure/FileManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Configure/MYsecConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Configure/RemoteHost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Configure/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Configure/WebMvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Controller/API/upload.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Controller/Ctfer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Controller/Data/Docker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Controller/Data/targets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Controller/Data/user.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Controller/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Controller/admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Base/Exception/ArgsError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Base/Exception/AuthenError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Base/Exception/DataError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Base/Exception/FileError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Base/Info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Base/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Base/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/CTFUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Mapper/CTFUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Mapper/StudentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Mapper/TargetDroneMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Mode/TargetDrone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/MyCTFApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/AdminService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/Data/TargetDroneService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/Data/User/CTFuserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/Data/User/Token.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/ContainerAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/DockerManger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/ImageAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/Mode/Container.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/Mode/HostConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/Mode/Label.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/Mode/Mount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/Mode/Network.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/Mode/NetworkSettings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/Mode/Port.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/DockerAPI/YamlConfigParse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/File/CommonUpload.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/File/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/File/dockerFileManger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/Interceptor/CookieSession/CookieManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Service/Interceptor/LoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/AppLogger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/Common.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/FileUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/HashUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/Http.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/ResposeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/com/hnust/myctf/Utils/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctf-all/target/classes/mysec.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/interflow/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/chat/ChatLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Data/chat/ChatLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/InterflowApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/InterflowApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/XinHuo.java" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/AI/XinHuo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/WS/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/src/main/java/com/hnust/interflow/Service/WS/ChatEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interflow/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interflow/src/test/java/com/hnust/interflow/InterflowApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/src/test/java/com/hnust/interflow/InterflowApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interflow/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interflow/target/classes/com/hnust/interflow/InterflowApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/interflow/target/classes/com/hnust/interflow/InterflowApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +145,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Python Script" />
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -124,32 +190,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "F:/code/myProject/MYSecProject/interflow/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDK",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
-    "ts.external.directory.path": "D:\\java idea\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/code/myProject/MYSecProject/interflow/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\java idea\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\code\myProject\MYSecProject\interflow\src\main\resources" />
@@ -162,6 +228,9 @@
       <recent name="com.hnust.interflow" />
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hnust.myblog.Configure" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -170,7 +239,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Client">
+  <component name="RunManager" selected="Spring Boot.MyblogApplication">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hnust.interflow.Service.WS.Client" />
       <module name="interflow" />
@@ -193,22 +262,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PyTest.gemini" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="interflow" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hnust.interflow.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hnust.interflow" />
-      <option name="MAIN_CLASS_NAME" value="com.hnust.interflow.PyTest" />
-      <option name="METHOD_NAME" value="gemini" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -255,6 +308,19 @@
     <configuration name="MyCTFApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ctf-all" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hnust.myctf.MyCTFApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyblogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="myblog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hnust.myblog.MyblogApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hnust.myblog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -339,20 +405,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PyTest.test1" />
-      <item itemvalue="JUnit.PyTest.gemini" />
       <item itemvalue="JUnit.PyTest.openai" />
       <item itemvalue="Spring Boot.MyCTFApplication" />
       <item itemvalue="Spring Boot.InterflowApplication" />
+      <item itemvalue="Spring Boot.MyblogApplication" />
       <item itemvalue="应用程序.Client" />
       <item itemvalue="应用程序.SimpleHttpServer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.MyblogApplication" />
         <item itemvalue="应用程序.Client" />
         <item itemvalue="JUnit.PyTest.test1" />
         <item itemvalue="应用程序.SimpleHttpServer" />
         <item itemvalue="JUnit.PyTest.openai" />
-        <item itemvalue="JUnit.PyTest.gemini" />
       </list>
     </recent_temporary>
   </component>
@@ -379,7 +445,17 @@
       <workItem from="1706693241275" duration="2717000" />
       <workItem from="1706700603456" duration="8305000" />
       <workItem from="1706760447574" duration="12279000" />
-      <workItem from="1706792384645" duration="11149000" />
+      <workItem from="1706792384645" duration="11384000" />
+      <workItem from="1706805051324" duration="1787000" />
+      <workItem from="1706874092857" duration="41000" />
+      <workItem from="1706880853587" duration="2472000" />
+      <workItem from="1706892047773" duration="1593000" />
+      <workItem from="1706943059253" duration="8898000" />
+      <workItem from="1706961105364" duration="32000" />
+      <workItem from="1707394131836" duration="4934000" />
+      <workItem from="1707666374698" duration="2846000" />
+      <workItem from="1707727729545" duration="7469000" />
+      <workItem from="1707807516512" duration="21967000" />
     </task>
     <task id="LOCAL-00001" summary="# Transforming microservices">
       <option name="closed" value="true" />
@@ -429,7 +505,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706506260617</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="# add ai init">
+      <option name="closed" value="true" />
+      <created>1706803816541</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706803816541</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +538,8 @@
     </ignored-roots>
     <MESSAGE value="# Transforming microservices" />
     <MESSAGE value="# update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="# update README.md" />
+    <MESSAGE value="# add ai init" />
+    <option name="LAST_COMMIT_MESSAGE" value="# add ai init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

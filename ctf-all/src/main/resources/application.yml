@@ -4,7 +4,7 @@ spring:
   #nacos center address
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      server-addr: 8.138.117.102:8848
       discovery:
         namespace: public
         username: nacos
@@ -29,8 +29,8 @@ spring:
 
 
 mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  configuration:
+ #   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       schema: mysec

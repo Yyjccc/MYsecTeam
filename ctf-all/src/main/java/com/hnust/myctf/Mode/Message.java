@@ -13,6 +13,12 @@ public class Message<T> {
 	private T info;
 	//错误信息
 	private String msg;
+	//时间戳
+	private Long time;
+
+	public Message(){
+		this.time=System.currentTimeMillis();
+	}
 
 
 	public void setOK(){

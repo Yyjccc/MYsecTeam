@@ -36,6 +36,8 @@ public class TargetDrone {
 
     //标签，数组类型json字符串
     private String labels;
+    //评价等级
+    private int rank;
 
     //提供者的id
     private Long provider;

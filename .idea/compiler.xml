@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="myblog" />
         <module name="interflow" />
         <module name="ctf-all" />
       </profile>
@@ -17,6 +18,7 @@
       <module name="MYSecProject" options="" />
       <module name="ctf-all" options="-parameters" />
       <module name="interflow" options="-parameters" />
+      <module name="myblog" options="-parameters" />
     </option>
   </component>
 </project>

@@ -10,7 +10,7 @@ public class ChatLogs {
 	@TableId
 	private Long id;
 
-	private String time;
+	private Long time;
 
 	private Long groupId;
 

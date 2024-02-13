@@ -39,13 +39,18 @@ public class CTFuserService {
 		}
 	}
 
+
+	public CTFUser getUserById(Long id){
+		return ctfUserMapper.selectById(id);
+	}
+
 	public void addCTFUser(CTFUser ctfUser){
 		//密码进行加盐hash
 		String rawPassword=ctfUser.getPassword();
 		ctfUser.setSalt(HashUtil.generateSalt());
 		ctfUser.setPassword(rawPassword);
 		if (ctfUser.isInner()) {
-			Student student = ctfUser.getStudentInfo();
+			Student student = studentMapper.selectById(ctfUser.getStudentInfoId());
 			studentMapper.insert(student);
 			ctfUser.setStudentInfoId(student.getId());
 
@@ -109,5 +114,33 @@ public class CTFuserService {
 			return getUserByToken(jwt);
 		}
 		throw new AuthenError("无效cookie");
+	}
+
+	public void deleteStudent(CTFUser ctfUser){
+		Long id=ctfUser.getStudentInfoId();
+		if(id==null|| id==0||id==-1){
+			throw new DataError();
+		}
+		studentMapper.deleteById(ctfUser.getStudentInfoId());
+		ctfUser.setStudentInfo(null);
+		ctfUser.setStudentInfoId(-1L);
+		ctfUserMapper.updateById(ctfUser);
+	}
+
+	public void updateStudent(CTFUser ctfUser,Student student){
+		Long studentInfoId = ctfUser.getStudentInfoId();
+		student.setId(studentInfoId);
+		studentMapper.updateById(student);
+
+	}
+
+	public Student getStudent(CTFUser ctfUser){
+		return studentMapper.selectById(ctfUser.getStudentInfoId());
+	}
+	public Long addStudent(CTFUser ctfUser,Student student){
+		studentMapper.insert(student);
+		ctfUser.setStudentInfoId(student.getId());
+		ctfUserMapper.updateById(ctfUser);
+		return  student.getId();
 	}
 }

@@ -1,7 +1,9 @@
 package com.hnust.interflow.Service.AI;
 
 import com.alibaba.fastjson.JSON;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import okhttp3.HttpUrl;
 import okhttp3.Response;
 import okhttp3.WebSocket;
@@ -19,6 +21,8 @@ import java.util.*;
 
 
 @Component
+@Data
+@AllArgsConstructor
 public class XinHuo extends WebSocketListener implements AIMode{
 
 	public static final String hostUrl = "https://spark-api.xf-yun.com/v3.5/chat";
@@ -36,9 +40,16 @@ public class XinHuo extends WebSocketListener implements AIMode{
 
 	public static String totalAnswer=""; // 大模型的答案汇总
 
+	private boolean init=false;
+
 	public XinHuo() {
+
+	}
+
+	public void init(){
+		init=true;
 		try {
-			authUrl = getAuthUrl(hostUrl, apiKey, apiSecret);
+			authUrl=getAuthUrl(hostUrl,apiKey,apiSecret);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

@@ -4,10 +4,12 @@ package com.hnust.myctf.Mode;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.hnust.myctf.Mode.Mapper.StudentMapper;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.hnust.myctf.Mode.Base.Student;
 import com.hnust.myctf.Utils.HashUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
 
@@ -41,6 +43,8 @@ public class CTFUser {
 
     //是否为管理员
     private boolean manager;
+
+    private boolean avatar=false;
 
     // 重写hashCode和equals方法,
     @Override
