@@ -7,12 +7,11 @@ import com.hnust.interflow.Data.Mode.Message;
 import com.hnust.interflow.Data.chat.ChatLogs;
 import com.hnust.interflow.Data.chat.Group;
 import com.hnust.interflow.Util.MessageUtil;
-import com.hnust.myctf.Mode.CTFUser;
+import com.hnust.myctf.Mode.Base.CTFUser;
 import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

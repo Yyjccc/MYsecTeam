@@ -17,6 +17,11 @@ spring:
         - /api/data/user/login/**
         - /api/data/user/register/**
 
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
 
 
   datasource:
@@ -34,6 +39,7 @@ mybatis-plus:
   global-config:
     db-config:
       schema: mysec
+
 
 
 
@@ -56,11 +62,11 @@ docker:
 
 file:
   #all upload  file root dir
-  root: ./ctf-all/uploads
+  root: ./ctf-all/static
   path:
-    attachment: /attachment
-    picture: /user
-    docker: /docker
+    attachment: /ctf/attachment
+    picture: /ctf/user
+    docker: /ctf/docker
 server:
   servlet:
     session:

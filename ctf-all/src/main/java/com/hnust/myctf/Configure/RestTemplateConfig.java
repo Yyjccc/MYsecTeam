@@ -14,8 +14,7 @@ public class RestTemplateConfig {
 		return new RestTemplate();
 	}
 
-	// If you need to customize the RestTemplate, you can do so in the same configuration class
-	// For example, setting a timeout for requests
+
 	@Bean
 	public RestTemplate customRestTemplate() {
 		SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();

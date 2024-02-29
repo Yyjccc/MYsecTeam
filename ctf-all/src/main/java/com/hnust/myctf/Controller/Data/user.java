@@ -7,8 +7,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import com.hnust.myctf.Mode.Base.Exception.AuthenError;
 import com.hnust.myctf.Mode.Base.Exception.DataError;
-import com.hnust.myctf.Mode.CTFUser;
-import com.hnust.myctf.Mode.Message;
+import com.hnust.myctf.Mode.Base.CTFUser;
+import com.hnust.myctf.Mode.Base.Message;
 import com.hnust.myctf.Service.Data.User.CTFuserService;
 import com.hnust.myctf.Service.Data.User.Token;
 import com.hnust.myctf.Service.Interceptor.CookieSession.CookieManager;
@@ -35,7 +35,7 @@ public class user implements AppLogger {
 			CTFUser ctfUser=ctfUserService.getCTFUserByName(username);
 			if(ctfUser.checkPassword(password)){
 				Token jwt=new Token();
-				jwt.generateJwt(JSON.toJSONString(ctfUser),3600*50);
+				jwt.generateJwt(JSON.toJSONString(ctfUser),3600*50*1000);
 				session.setAttribute("user",JSON.toJSONString(ctfUser));
 				//设置cookie
 				CookieManager.setLoginCookie(response,jwt.getJwt());

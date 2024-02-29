@@ -19,15 +19,12 @@ public class Category {
 	@TableId
 	private Long id;
 
-	private String name;
+	private String categoryName;
 
 	//父类id
 	private Long pid;
 
 	private String description;
-
-	//是否启用
-	private int status;
 
 	private Long userId;
 
@@ -35,9 +32,13 @@ public class Category {
 
 	private Date updateTime;
 
-	private Long updateBy;
-
-	private boolean delFlag;
+	private Long createBy;
 
 
+
+	public Category(Long id, String name) {
+		this.id=id;
+		this.categoryName=name;
+
+	}
 }

@@ -1,13 +1,18 @@
 package com.hnust.myctf.Controller.API;
 
-import com.hnust.myctf.Mode.Message;
-import com.hnust.myctf.Mode.TargetDrone;
+import com.hnust.myctf.Mode.Base.Exception.ArgsError;
+import com.hnust.myctf.Mode.Base.Message;
+import com.hnust.myctf.Mode.Base.TargetDrone;
+import com.hnust.myctf.Mode.Vo.FileUploadVo;
 import com.hnust.myctf.Service.Data.TargetDroneService;
 import com.hnust.myctf.Service.File.CommonUpload;
 import com.hnust.myctf.Utils.ResposeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //文件上传的总接口
 @RestController
@@ -21,6 +26,9 @@ public class upload {
 
 	@Autowired
 	private TargetDroneService targetDroneService;
+
+
+	private static List<String> allowType=new ArrayList<>(List.of(new String[]{"img"}));
 
 
 
@@ -67,6 +75,24 @@ public class upload {
 			//修改数据
 			targetDroneService.updateTarget("attachment","true",Long.parseLong(id));
 			return ResposeUtil.response("上传成功");
+		}catch (Exception e){
+			return ResposeUtil.error(e);
+		}
+	}
+
+	//提供其他模块的上传接口
+	@PostMapping("/{module}/{fileType}")
+	public Message modleCommon(@PathVariable String module,@PathVariable String fileType,@RequestParam("file") MultipartFile file){
+		try {
+			if(!allowType.contains(fileType)){
+				throw new ArgsError("不允许的文件类型");
+			}
+			if(module.equals("blog")){
+				String path="/"+module+"/"+fileType;
+				FileUploadVo uploadVo = fileUploadService.moduleUpload(path, file);
+				return ResposeUtil.response(uploadVo);
+			}
+			throw new ArgsError("模块错误");
 		}catch (Exception e){
 			return ResposeUtil.error(e);
 		}

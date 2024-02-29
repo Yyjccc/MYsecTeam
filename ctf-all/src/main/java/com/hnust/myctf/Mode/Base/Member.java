@@ -1,7 +1,6 @@
 package com.hnust.myctf.Mode.Base;
 
 import lombok.Data;
-import com.hnust.myctf.Mode.CTFUser;
 import org.springframework.stereotype.Component;
 
 @Component

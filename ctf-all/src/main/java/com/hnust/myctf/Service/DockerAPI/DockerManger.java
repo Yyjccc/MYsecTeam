@@ -2,7 +2,7 @@ package com.hnust.myctf.Service.DockerAPI;
 
 import lombok.Data;
 import com.hnust.myctf.Configure.RemoteHost;
-import com.hnust.myctf.Mode.CTFUser;
+import com.hnust.myctf.Mode.Base.CTFUser;
 import com.hnust.myctf.Service.DockerAPI.Mode.Container;
 import com.hnust.myctf.Service.DockerAPI.Mode.Label;
 import org.slf4j.Logger;
@@ -37,12 +37,12 @@ public class DockerManger {
 
     public DockerManger(RemoteHost remoteHost){
         this.remoteHost=remoteHost;
-        try {
-            this.activeDocker = ContainerAPI.getAllContainer(remoteHost);
-        }catch (Exception e){
-            this.status=-1;
-           logger.error("docker 服务器错误，请检查");
-        }
+//        try {
+//            this.activeDocker = ContainerAPI.getAllContainer(remoteHost);
+//        }catch (Exception e){
+//            this.status=-1;
+//           logger.error("docker 服务器错误，请检查");
+//        }
         this.status=1;
         this.userDockerMap=new HashMap<>();
 

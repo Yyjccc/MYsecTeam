@@ -9,16 +9,23 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
+import java.util.Arrays;
 import java.util.List;
 
 @Configuration
+@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
 
@@ -64,7 +71,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		FastJsonConfig fastJsonConfig = new FastJsonConfig();
 		fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
 		fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
-
+		fastJsonConverter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON,MediaType.APPLICATION_JSON_UTF8));
 		SerializeConfig.globalInstance.put(Long.class, ToStringSerializer.instance);
 		fastJsonConfig.setSerializeConfig(SerializeConfig.globalInstance);
 		fastJsonConverter.setFastJsonConfig(fastJsonConfig);
@@ -75,7 +82,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+		//converters.clear();
+		MappingJackson2HttpMessageConverter jackson2HttpMessageConverter = new MappingJackson2HttpMessageConverter();
+		converters.add(new StringHttpMessageConverter());
 		converters.add(fastJsonHttpMessageConverters());
+
 	}
 }
 

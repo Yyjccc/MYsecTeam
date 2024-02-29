@@ -1,8 +1,8 @@
 package com.hnust.myctf.Controller.Data;
 
 
-import com.hnust.myctf.Mode.Message;
-import com.hnust.myctf.Mode.TargetDrone;
+import com.hnust.myctf.Mode.Base.Message;
+import com.hnust.myctf.Mode.Base.TargetDrone;
 import com.hnust.myctf.Service.Data.TargetDroneService;
 import com.hnust.myctf.Utils.ResposeUtil;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.hnust.myctf.Controller;
 
 import com.hnust.myctf.Configure.MYsecConfig;
-import com.hnust.myctf.Mode.Message;
+import com.hnust.myctf.Mode.Base.Message;
 import com.hnust.myctf.Service.AdminService;
 import com.hnust.myctf.Service.Data.TargetDroneService;
 import com.hnust.myctf.Utils.Common;

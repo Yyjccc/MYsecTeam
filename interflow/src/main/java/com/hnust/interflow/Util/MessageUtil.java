@@ -3,7 +3,7 @@ package com.hnust.interflow.Util;
 import com.hnust.interflow.Data.Mode.Message;
 import com.hnust.interflow.Data.chat.ChatLogs;
 import com.hnust.interflow.Data.chat.Group;
-import com.hnust.myctf.Mode.CTFUser;
+import com.hnust.myctf.Mode.Base.CTFUser;
 
 import java.util.List;
 

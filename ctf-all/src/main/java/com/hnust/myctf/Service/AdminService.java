@@ -1,7 +1,7 @@
 package com.hnust.myctf.Service;
 
 import lombok.Data;
-import com.hnust.myctf.Mode.CTFUser;
+import com.hnust.myctf.Mode.Base.CTFUser;
 import com.hnust.myctf.Service.Data.TargetDroneService;
 import com.hnust.myctf.Service.File.CommonUpload;
 import org.springframework.beans.factory.annotation.Autowired;

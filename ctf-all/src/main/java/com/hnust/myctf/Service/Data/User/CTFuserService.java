@@ -6,7 +6,7 @@ import com.hnust.myctf.Mode.Base.Exception.ArgsError;
 import com.hnust.myctf.Mode.Base.Exception.AuthenError;
 import com.hnust.myctf.Mode.Base.Exception.DataError;
 import com.hnust.myctf.Mode.Base.Student;
-import com.hnust.myctf.Mode.CTFUser;
+import com.hnust.myctf.Mode.Base.CTFUser;
 import com.hnust.myctf.Mode.Mapper.CTFUserMapper;
 import com.hnust.myctf.Mode.Mapper.StudentMapper;
 import com.hnust.myctf.Service.DockerAPI.DockerManger;

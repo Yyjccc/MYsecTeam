@@ -16,6 +16,6 @@ public class CategoryList {
 	public CategoryList(Category category){
 		this.id=category.getId();
 		this.pid=category.getPid();
-		this.name=category.getName();
+		this.name=category.getCategoryName();
 	}
 }

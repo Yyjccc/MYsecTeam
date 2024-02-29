@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: common
+  #nacos center address
+  cloud:
+    nacos:
+      server-addr: 8.138.117.102:8848
+      discovery:
+        namespace: public
+        username: nacos
+        password: nacos
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/common?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+  data:
+    redis:
+      host: 8.138.117.102
+      port: 6379
+      password: yyjccc
+
+
+
+
+
+mybatis-plus:
+  #  configuration:
+  #   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      schema: common
+
+
+file:
+  #all upload  file root dir
+  root: ./common/static
+  manager:
+    mode: local
+    allow: img,zip
+
+
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: false
+  port: 12340
+
+
+
+
+

@@ -4,7 +4,7 @@ package com.hnust.myctf.Service.Interceptor;
 import com.alibaba.fastjson.JSON;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import com.hnust.myctf.Mode.Message;
+import com.hnust.myctf.Mode.Base.Message;
 import com.hnust.myctf.Service.Data.User.Token;
 import com.hnust.myctf.Service.Interceptor.CookieSession.CookieManager;
 import org.springframework.http.HttpStatus;

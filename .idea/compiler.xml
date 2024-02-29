@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="myblog" />
+        <module name="common" />
         <module name="interflow" />
         <module name="ctf-all" />
       </profile>
@@ -16,6 +17,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="MYSecProject" options="" />
+      <module name="common" options="-parameters" />
       <module name="ctf-all" options="-parameters" />
       <module name="interflow" options="-parameters" />
       <module name="myblog" options="-parameters" />

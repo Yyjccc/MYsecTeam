@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.hnust.myctf.Configure.MYsecConfig;
 
 import com.hnust.myctf.Mode.Base.Student;
-import com.hnust.myctf.Mode.CTFUser;
+import com.hnust.myctf.Mode.Base.CTFUser;
 import com.hnust.myctf.Mode.Mapper.CTFUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

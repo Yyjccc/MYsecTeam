@@ -1,7 +1,6 @@
 package com.hnust.interflow.Data.Mode;
 
 import com.hnust.interflow.Data.chat.ChatLogs;
-import com.hnust.myctf.Mode.CTFUser;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

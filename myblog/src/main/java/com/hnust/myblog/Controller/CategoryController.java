@@ -2,7 +2,7 @@ package com.hnust.myblog.Controller;
 
 import com.hnust.myblog.Mode.ResponseResult;
 import com.hnust.myblog.Mode.Vo.CategoryList;
-import com.hnust.myblog.Service.CategoryService;
+import com.hnust.myblog.Service.interfaces.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

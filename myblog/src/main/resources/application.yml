@@ -1,9 +1,10 @@
 server:
   port: 12347
 
+
 spring:
   application:
-    name: interflow
+    name: blog
   cloud:
     nacos:
       server-addr: 8.138.117.102:8848
@@ -18,8 +19,24 @@ spring:
     url: jdbc:mysql://localhost:3306/mysec_myblog?characterEncoding=utf-8&useSSL=false
     username: root
     password: root
-
+  data:
+    redis:
+      host: 8.138.117.102
+      port: 6379
+      password: yyjccc
+      #host: 127.0.0.1
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 #mybatis-plus:
 #  configuration:
 #   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# swagger-ui custom path
+springdoc:
+  api-docs:
+    enable: true
+  swagger-ui:
+    enable: true

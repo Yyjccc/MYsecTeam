@@ -6,17 +6,14 @@ import com.hnust.myblog.Mode.Base.Article;
 import com.hnust.myblog.Mode.Base.Category;
 import com.hnust.myblog.Mode.Mapper.CategoryMapper;
 import com.hnust.myblog.Mode.Vo.CategoryList;
-import com.hnust.myblog.Service.ArticleService;
-import com.hnust.myblog.Service.CategoryService;
+import com.hnust.myblog.Service.interfaces.ArticleService;
+import com.hnust.myblog.Service.interfaces.CategoryService;
 import com.hnust.myblog.Service.utils.SystemConstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> implements CategoryService {
@@ -43,5 +40,13 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 			}
 		}
 		return result;
+	}
+
+	@Override
+	public List<Category> countById(Long id) {
+		LambdaQueryWrapper<Category> wrapper=new LambdaQueryWrapper<>();
+		wrapper.eq(Category::getCreateBy,id);
+		wrapper.select(Category::getId,Category::getCategoryName);
+		return list(wrapper);
 	}
 }

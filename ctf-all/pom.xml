@@ -6,11 +6,13 @@
         <groupId>com.hnust</groupId>
         <artifactId>MYSecProject</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hnust.myctf</groupId>
     <artifactId>ctf-all</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ctf-all</name>
+
     <description>ctf-all</description>
     <properties>
         <java.version>17</java.version>
@@ -31,7 +33,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
 
 
         <dependency>

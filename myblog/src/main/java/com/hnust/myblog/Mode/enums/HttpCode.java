@@ -19,7 +19,9 @@ public enum HttpCode {
 
 	REQUIRE_USERNAME(504,"必须填写用户名"),
 
-	LOGIN_ERROR(505,"用户名或者密码错误")
+	LOGIN_ERROR(505,"用户名或者密码错误"),
+
+	INVALID_TOKEN(506,"无效token")
 	;
 
 	private Integer code;

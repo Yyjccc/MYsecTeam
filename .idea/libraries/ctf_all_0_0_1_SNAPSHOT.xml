@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ctf-all-0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ctf-all/target/ctf-all-0.0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

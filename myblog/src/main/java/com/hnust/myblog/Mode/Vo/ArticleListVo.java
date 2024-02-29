@@ -12,13 +12,13 @@ import java.util.Date;
 public class ArticleListVo {
 	private Long id;
 	//标题
-	private String title;
+	private String articleTitle;
 	//文章摘要
 	private String summary;
 	//所属分类
-	private Long categoryName;
+	private String categoryName;
 	//缩略图
-	private String thumbnail;
+	private String articleCover;
 
 	//评论数
 	private Integer commentCount;

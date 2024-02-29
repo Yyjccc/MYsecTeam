@@ -1,6 +1,8 @@
 package com.hnust.myctf.Service.File;
 
 
+import com.hnust.myctf.Mode.Vo.FileUploadVo;
+import com.hnust.myctf.Service.ServiceDiscoveryService;
 import lombok.Data;
 import com.hnust.myctf.Configure.FileManager;
 import com.hnust.myctf.Mode.Base.Exception.FileError;
@@ -14,7 +16,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
-
+import java.util.List;
 
 
 @Data
@@ -26,10 +28,41 @@ public class CommonUpload {
 
 	private final String ConfigName = "docker-compose.yaml";
 
+	@Autowired
+	public ServiceDiscoveryService discoveryService;
+
 
 	public CommonUpload(FileManager fileConfig) {
 		this.fileConfig = fileConfig;
 	}
+
+
+
+
+	public FileUploadVo moduleUpload(String path, MultipartFile file){
+		String filepath=fileConfig.getUploadRootDir()+path;
+		// 获取文件的原始名称
+		String fileName = file.getOriginalFilename();
+		// 创建目标路径
+		Path targetPath = Path.of(filepath, fileName);
+
+		// 将文件保存到目标路径
+		try {
+			Files.copy(file.getInputStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
+
+			//获取本服务的主机地址
+			List<String> serviceInstances = discoveryService.getServiceInstances("ctfAll");
+			String src=serviceInstances.get(0)+(filepath+"/"+fileName).substring(1);
+			FileUploadVo uploadVo = new FileUploadVo("local");
+			uploadVo.setFilename(fileName);
+			uploadVo.setSrc(src);
+			uploadVo.setModuleType(path);
+			return uploadVo;
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 
 	public void uploadFile(MultipartFile file) throws Exception {
 		// 获取文件的原始名称

@@ -5,7 +5,7 @@ import lombok.Data;
 import com.hnust.myctf.Mode.Base.Exception.ArgsError;
 import com.hnust.myctf.Mode.Base.Exception.DataError;
 import com.hnust.myctf.Mode.Mapper.TargetDroneMapper;
-import com.hnust.myctf.Mode.TargetDrone;
+import com.hnust.myctf.Mode.Base.TargetDrone;
 import com.hnust.myctf.Service.File.CommonUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

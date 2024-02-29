@@ -15,10 +15,29 @@ public class  Token {
 	private String jwt;
 
 
-	public  static Key secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+	public  static Key secretKey =Keys.secretKeyFor(SignatureAlgorithm.HS256);
+
+	private static long expirationTime=3600*6*1000;
 
 	//生成jwt
 	public  void generateJwt(String subject,long expirationTime) {
+		Date now = new Date();
+		Date expiration = new Date(now.getTime() + expirationTime);
+
+		String res=Jwts.builder()
+				.setSubject(subject)
+				.setIssuedAt(now)
+				.setExpiration(expiration)
+				.signWith(SignatureAlgorithm.HS256, secretKey)
+				//.serializeToJsonWith(new GsonSerializer<>(new Gson()))
+				.compact();
+		this.setJwt(res);
+
+	}
+
+
+
+	public  void generateJwt(String subject) {
 		Date now = new Date();
 		Date expiration = new Date(now.getTime() + expirationTime);
 

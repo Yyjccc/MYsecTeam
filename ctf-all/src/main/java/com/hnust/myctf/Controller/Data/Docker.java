@@ -2,12 +2,13 @@ package com.hnust.myctf.Controller.Data;
 
 
 import com.alibaba.fastjson.JSON;
-import com.hnust.myctf.Mode.CTFUser;
-import com.hnust.myctf.Mode.Message;
+import com.hnust.myctf.Mode.Base.CTFUser;
+import com.hnust.myctf.Mode.Base.Message;
 import com.hnust.myctf.Service.DockerAPI.DockerManger;
 import com.hnust.myctf.Service.DockerAPI.Mode.Container;
 import com.hnust.myctf.Utils.ResposeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class Docker {
 
     private String basePath;
 
+    //@Lazy
     @Autowired
     public Docker(DockerManger dockerManger) {
         this.dockerManger = dockerManger;

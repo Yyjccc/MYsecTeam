@@ -1,6 +1,6 @@
 package com.hnust.myctf.Utils;
 
-import com.hnust.myctf.Mode.Message;
+import com.hnust.myctf.Mode.Base.Message;
 
 public final class ResposeUtil implements AppLogger {
 
